@@ -1,0 +1,10 @@
+ipython
+langchain
+langchain-openai
+langchain-experimental
+python-dotenv
+openai
+datasets
+huggingface-hub
+neo4j
+langchain_neo4j
