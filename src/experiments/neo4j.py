@@ -27,6 +27,15 @@ with driver.session() as session:
         count += 1
 
 print(f"Listed {count} nodes")
+#%%
+
+# create a new database for the experiment
+driver = GraphDatabase.driver(uri, auth=basic_auth(user, password))
+with driver.session() as session:
+    # Create a new database named "exp"
+    session.run("CREATE DATABASE exp")
+    print("Created new database 'exp'")
+    
 
 #%%
 
