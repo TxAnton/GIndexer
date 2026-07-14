@@ -1,5 +1,6 @@
 import openai
-from src.units.myenv import env
+from src.units.myenv import env as myenv
+import os
 
 def initialize_openai():
     """
@@ -11,9 +12,9 @@ def initialize_openai():
         openai.OpenAI: An initialized OpenAI client instance, or None if configuration is missing.
     """
     # Get credentials from the globally loaded environment object
-    api_key = env.get("OPENAI_API_KEY")
-    api_base = env.get("OPENAI_API_BASE")
-    model = env.get("OPENAI_MODEL")
+    api_key = os.getenv("OPENAI_API_KEY")
+    api_base = os.getenv("OPENAI_API_BASE")
+    model = os.getenv("OPENAI_MODEL")
 
     # Check if a valid API key is present
     if not api_key or api_key == "YOUR_API_KEY":

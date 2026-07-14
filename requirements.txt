@@ -8,3 +8,5 @@ datasets
 huggingface-hub
 neo4j
 langchain_neo4j
+tqdm
+numpy

@@ -45,3 +45,20 @@ graph_documents = extractor.extract_graph(
 # 6. Print the results using the static method
 extractor.print_graphs(graph_documents)
 
+#%%
+
+# save graph to file
+
+graph_doc = graph_documents[0]  # Assuming we have at least one graph document
+
+# serialize the graph_documents_list to a file for later use
+import pickle
+with open('data/graph_documents_list.pkl', 'wb') as f:
+    pickle.dump(graph_doc, f)
+#%%
+
+# load the graph_documents_list from the file
+with open('data/graph_documents_list.pkl', 'rb') as f:
+    graph_doc1 = pickle.load(f)
+
+#%%
