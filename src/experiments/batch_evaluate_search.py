@@ -145,7 +145,7 @@ if evaluation_results:
         import csv
         out_path = "data/res/batch_evaluation_results.csv"
         with open(out_path, 'w', newline='') as csvfile:
-            writer = csv.writer(csvfile, delimiter='\t')
+            writer = csv.writer(csvfile, delimiter=',')
             writer.writerow(["query_id", "true_positives", "precision", "recall"])
             for res in evaluation_results:
                 writer.writerow([res["query_id"], res["true_positives"], f"{res["precision"]:.6f}", f"{res["recall"]:.6f}"])
